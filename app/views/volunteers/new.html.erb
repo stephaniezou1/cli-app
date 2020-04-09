@@ -1,0 +1,13 @@
+<h1>Create a new volunteer</h1>
+
+<%= form_for @volunteer do |f| %>
+
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %><br>
+    <br><%= f.label :username %>
+    <%= f.text_field :username %><br>
+    <br><%= f.submit "Create new volunteer" %>
+
+<% end %>
+
+<br><%= link_to "Return to list of volunteers", volunteers_path %>

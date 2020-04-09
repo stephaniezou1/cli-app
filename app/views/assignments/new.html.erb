@@ -1,0 +1,11 @@
+<h1> Create a new assignment </h1>>
+
+<%= form_for @assignment do |f| %>
+
+    <%= f.label :volunteer_id %>
+    <%= f.collection_select :volunteer_id, Volunteer.all, :id, :full_name %><br>
+    <%= f.label :task_id %>
+    <%= f.collection_select :task_id, Task.all, :id, :name %><br>
+    <br><%= f.submit "Create a new assignment" %>
+
+<% end %>

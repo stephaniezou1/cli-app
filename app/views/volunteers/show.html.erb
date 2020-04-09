@@ -1,0 +1,27 @@
+<h1> Name: <%= @volunteer.full_name %>   </h1><br>
+<h2> Username: <%= @volunteer.username %> </h2>
+
+
+<h3> Your list of assignments </h3>
+
+<% if @volunteer.assignments.length == 0 %>
+
+    <p> You currently have no assignments</p>
+
+<% else %>
+    
+    <ol>
+    <% @volunteer.assignments.each do |assignment| %>
+        <li> 
+        <%= assignment.task.name %>
+        </li>
+
+     <% end %>
+     </ol>
+
+<% end %>
+
+<%= link_to "Add a new assignment", new_assignment_path %><br>
+<br><%= link_to "Edit this account", edit_volunteer_path %><br>
+<br><%= link_to "Return to list of volunteers", volunteers_path %><br>
+<br><%= button_to "Delete this account", @volunteer, method: :delete %>
